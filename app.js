@@ -3,17 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let ejs = require('ejs')
+let ejs = require('ejs');
 
-var indexRouter = require('./routes/index')
+var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
-var homeRouter = require('./routes/home')
+var homeRouter = require('./routes/home');
 let archiveRouter = require('./routes/archive');
 let contactusRouter = require('./routes/contact-us');
-let singleRouter = require('./routes/single')
-var indexRouter1 = require('./routes/index1')
+let singleRouter = require('./routes/single');
 let defRouter = require('./routes/def');
+let loginAdminRouter = require('./routes/loginAdmin');
+let indexAdminRouter = require('./routes/indexAdmin');
+
 
 var app = express();
 
@@ -29,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/def',defRouter);
-app.use('/index1', indexRouter1);
+// app.use('/index1', indexRouter1);
 app.use('/index', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/', loginRouter);
@@ -38,6 +40,8 @@ app.use('/archive', archiveRouter);
 app.use('/contact-us',contactusRouter);
 app.use('/single',singleRouter);
 // app.use('/single-post')
+app.use('/loginAdmin', loginAdminRouter);
+app.use('/indexAdmin', indexAdminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
