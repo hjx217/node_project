@@ -15,6 +15,7 @@ let singleRouter = require('./routes/single');
 let defRouter = require('./routes/def');
 let loginAdminRouter = require('./routes/loginAdmin');
 let indexAdminRouter = require('./routes/indexAdmin');
+let adminlistRouter = require('./routes/admin-list');
 
 
 var app = express();
@@ -42,6 +43,7 @@ app.use('/single',singleRouter);
 // app.use('/single-post')
 app.use('/loginAdmin', loginAdminRouter);
 app.use('/indexAdmin', indexAdminRouter);
+app.use('/admin-list', adminlistRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
