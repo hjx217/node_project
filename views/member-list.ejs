@@ -53,16 +53,44 @@
             </th>
             <th>ID</th>
             <th>用户名</th>
-            <th>性别</th>
-            <th>手机</th>
+            <th>密码</th>
+            <th>电话号码</th>
             <th>邮箱</th>
-            <th>地址</th>
             <th>加入时间</th>
             <th>状态</th>
             <th>操作</th></tr>
         </thead>
         <tbody>
+          <%for(let i of list) { %>
           <tr>
+            <td>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <td><%= i.id %></td>
+            <td><%= i.username %></td>
+            <td><%= i.password %></td>
+            <td><%= i.phone_number %></td>
+            <td><%= i.email %></td>
+            <td><%= i.registerTime %></td>
+            <td class="td-status">
+              <span class="layui-btn layui-btn-normal layui-btn-sm">已启用</span></td>
+            <td class="td-manage">
+              <a onclick="member_stop(this,'10001')" class="layui-btn layui-btn-sm layui-btn-primary" href="javascript:;"  title="启用">
+              启用
+              </a>
+              <a title="编辑" class="layui-btn layui-btn-sm layui-btn-normal"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
+                编辑
+              </a>
+              <a  class="layui-btn layui-btn-sm layui-btn-warm" onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
+                修改密码
+              </a>
+              <a title="删除" class="layui-btn layui-btn-sm layui-btn-danger" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                删除
+              </a>
+            </td>
+          </tr>
+          <% } %>
+          <!-- <tr>
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
@@ -89,35 +117,7 @@
                 删除
               </a>
             </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
-            <td>1</td>
-            <td>小明</td>
-            <td>男</td>
-            <td>13000000000</td>
-            <td>admin@mail.com</td>
-            <td>北京市 海淀区</td>
-            <td>2017-01-01 11:11:42</td>
-            <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-sm">已启用</span></td>
-            <td class="td-manage">
-              <a onclick="member_stop(this,'10001')" class="layui-btn layui-btn-sm layui-btn-primary" href="javascript:;"  title="启用">
-              启用
-              </a>
-              <a title="编辑" class="layui-btn layui-btn-sm layui-btn-normal"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
-                编辑
-              </a>
-              <a  class="layui-btn layui-btn-sm layui-btn-warm" onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                修改密码
-              </a>
-              <a title="删除" class="layui-btn layui-btn-sm layui-btn-danger" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                删除
-              </a>
-            </td>
-          </tr>
+          </tr> -->
           <!-- <tr>
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
