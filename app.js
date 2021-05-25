@@ -9,9 +9,7 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var homeRouter = require('./routes/home');
-let archiveRouter = require('./routes/archive');
-let contactusRouter = require('./routes/contact-us');
-let singleRouter = require('./routes/single');
+
 let defRouter = require('./routes/def');
 let loginAdminRouter = require('./routes/loginAdmin');
 let indexAdminRouter = require('./routes/indexAdmin');
@@ -38,9 +36,6 @@ app.use('/index', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/', loginRouter);
 app.use('/home', homeRouter);
-app.use('/archive', archiveRouter);
-app.use('/contact-us',contactusRouter);
-app.use('/single',singleRouter);
 // app.use('/single-post')
 app.use('/loginAdmin', loginAdminRouter);
 app.use('/indexAdmin', indexAdminRouter);
