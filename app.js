@@ -9,12 +9,15 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var homeRouter = require('./routes/home');
+let home3Router = require('./routes/home3');
 
 let defRouter = require('./routes/def');
 let loginAdminRouter = require('./routes/loginAdmin');
 let indexAdminRouter = require('./routes/indexAdmin');
 let adminlistRouter = require('./routes/admin-list');
 let memberlistRouter = require('./routes/member_list');
+let aboutRouter = require('./routes/action/about');
+let contactRouter =require('./routes/action/contact')
 
 
 var app = express();
@@ -36,11 +39,14 @@ app.use('/index', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/', loginRouter);
 app.use('/home', homeRouter);
+app.use('/home3', home3Router);
 // app.use('/single-post')
 app.use('/loginAdmin', loginAdminRouter);
 app.use('/indexAdmin', indexAdminRouter);
 app.use('/admin-list', adminlistRouter);
 app.use('/member-list', memberlistRouter);
+app.use('/about', aboutRouter);
+app.use('/contact', contactRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
