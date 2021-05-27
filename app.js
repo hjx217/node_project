@@ -5,19 +5,26 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let ejs = require('ejs');
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/action/index');
 // var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
-var homeRouter = require('./routes/home');
-let home3Router = require('./routes/home3');
+var loginRouter = require('./routes/action/login');
+var homeRouter = require('./routes/action/home');
+let home3Router = require('./routes/action/home3');
 
-let defRouter = require('./routes/def');
-let loginAdminRouter = require('./routes/loginAdmin');
-let indexAdminRouter = require('./routes/indexAdmin');
-let adminlistRouter = require('./routes/admin-list');
-let memberlistRouter = require('./routes/member_list');
+let defRouter = require('./routes/action/def');
+let loginAdminRouter = require('./routes/action/loginAdmin');
+let indexAdminRouter = require('./routes/action/indexAdmin');
+let adminlistRouter = require('./routes/action');
+let memberlistRouter = require('./routes/action/member_list');
 let aboutRouter = require('./routes/action/about');
 let contactRouter =require('./routes/action/contact')
+let blogRouter = require('./routes/action/blog');
+let blogDetailsRouter = require('./routes/action/blog-details');
+let singleRouter = require('./routes/action/single-product-countdown');
+let shopRouter = require('./routes/action/shop');
+let accountRouter = require('./routes/action/my-account');
+let cartRouter = require('./routes/action/cart');
+let checkoutRouter = require('./routes/action/checkout');
 
 
 var app = express();
@@ -47,6 +54,13 @@ app.use('/admin-list', adminlistRouter);
 app.use('/member-list', memberlistRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
+app.use('/blog', blogRouter);
+app.use('/blog-details', blogDetailsRouter)
+app.use('/single-product-countdown', singleRouter);
+app.use('/shop', shopRouter);
+app.use('/my-account', accountRouter);
+app.use('/cart', cartRouter);
+app.use('/checkout', checkoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
