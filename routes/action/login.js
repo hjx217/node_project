@@ -5,6 +5,8 @@ var fs = require('fs');
 
 let connection = require('../until/connection');
 const Blog = require('../bean/blog');
+// let userLogin = require('../dao/sql')
+
 var router = express.Router();
 
 router.get('/register', (req,res) => {
