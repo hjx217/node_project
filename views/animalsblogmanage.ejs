@@ -33,16 +33,16 @@
     </div>
     <div class="x-body">
       <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so" method="post" action="/search">
+        <form class="layui-form layui-col-md12 x-so" method="post" action="/searchblog">
           <!-- <input class="layui-input" placeholder="开始日" name="start" id="start">
           <input class="layui-input" placeholder="截止日" name="end" id="end"> -->
-          <input type="text" name="title"  placeholder="请输入商品名" autocomplete="off" class="layui-input">
-          <button class="layui-btn"  lay-submit="" lay-filter="sreach" onclick="search()">查询</button>
+          <input type="text" name="title"  placeholder="请输入标题" autocomplete="off" class="layui-input">
+          <button class="layui-btn"  lay-submit="" lay-filter="sreach" onclick="searchblog()">查询</button>
         </form>
       </div>
       <xblock>
         <!-- <button class="layui-btn layui-btn-danger" onclick="delAll()">批量删除</button> -->
-        <button class="layui-btn" onclick="add()">添加</button>
+        <button class="layui-btn" onclick="addblog()">添加</button>
         <span class="x-right" style="line-height:40px"></span>
       </xblock>
       <table class="layui-table">
@@ -53,26 +53,26 @@
             </th>
             <th>ID</th>
             <th>图片</th>
-            <th>折扣</th>
-            <th>商品名称</th>
-            <th>新价格</th>
-            <th>旧价格</th>
+            <th>时间</th>
+            <th>标题</th>
+            <th>简介</th>
+            <!-- <th>旧价格</th> -->
             <!-- <th>更新时间</th> -->
             <!-- <th>状态</th> -->
             <th>操作</th></tr>
         </thead>
         <tbody>
-          <%for(let i of list) { %>
+          <% for(let i of animals) { %>
           <tr>
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'></div>
             </td>
             <td><%= i.id %></td>
             <td><%= i.image %></td>
-            <td><%= i.discount %></td>
+            <td><%= i.blogTime %></td>
             <td><%= i.title %></td>
-            <td><%= i.newprice %></td>
-            <td><%= i.oldprice %></td>
+            <td><%= i.ptext %></td>
+            <!-- <td><%= i.oldprice %></td> -->
             <!-- <td><%= i.updateTime %></td> -->
             <!-- <td class="td-status">
               <span class="layui-btn layui-btn-normal layui-btn-sm">已启用</span></td> -->
@@ -83,10 +83,10 @@
               <!-- <a title="编辑" class="layui-btn layui-btn-sm layui-btn-normal"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
                 编辑
               </a> -->
-              <a data-id="<%= i.id %>"  class="layui-btn layui-btn-sm layui-btn-warm modification"  title="修改">
+              <a data-id="<%= i.id %>"  class="layui-btn layui-btn-sm layui-btn-warm modificationblog"  title="修改">
                 修改
               </a>
-              <a data-id="<%= i.id %>" title="删除" class="layui-btn layui-btn-sm layui-btn-danger del" >
+              <a data-id="<%= i.id %>" title="删除" class="layui-btn layui-btn-sm layui-btn-danger delblog" >
                 删除
               </a>
             </td>
@@ -147,26 +147,26 @@
     //   }
 
       /*商品-删除*/
-      Array.from(document.getElementsByClassName('del')).forEach(j => {
+      Array.from(document.getElementsByClassName('delblog')).forEach(j => {
           j.onclick = function(){
               let id = this.getAttribute('data-id');
-              window.location.href = '/del/' + id;
+              window.location.href = '/delblog/' + id;
           }
       })
       /*商品-修改*/
      
-        Array.from(document.getElementsByClassName('modification')).forEach(k => {
+        Array.from(document.getElementsByClassName('modificationblog')).forEach(k => {
           k.onclick = function(){
               let id = this.getAttribute('data-id');
-              window.location.href = '/modification/' + id;
+              window.location.href = '/modificationblog/' + id;
           }
       })
       
       
       
       /*商品-查询*/
-     function search(){
-       window.location.href = '/search'
+     function searchblog(){
+       window.location.href = '/searchblog'
      }
     //   function member_del(obj,id){
     //       layer.confirm('确认要删除吗？',function(index){
@@ -176,8 +176,8 @@
     //       });
     //   }
 
-      function add() {
-          window.location.href = '/product-list/add'
+      function addblog() {
+          window.location.href = '/addblog'
         
       }
 

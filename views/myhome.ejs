@@ -60,7 +60,7 @@
                             <p class="header-top-message">Welcome To our shop !</p>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <!-- <div class="col-12 col-lg-6">
                         <div class="header-top-settings">
                             <ul class="nav">
                                 <li class="curreny-wrap">
@@ -76,7 +76,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Header Top Message End -->
 
                 </div>
@@ -103,7 +103,7 @@
                             <div class="main-menu">
                                 <ul>
                                     <li class="has-children">
-                                        <a href="home">Home</a>
+                                        <a href="myhome">Home</a>
                                         <!-- <ul class="sub-menu">
                                             <li><a href="index">Home 1</a></li>
                                             <li><a href="index-2">Home 2</a></li>
@@ -486,7 +486,7 @@
                                             <div class="action-wrapper">
                                                 <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                                                 <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                                <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                                <a data-id="<%= i.id %>" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                             </div>
                                         </div>
                                         <!-- Thumb End  -->
@@ -502,8 +502,8 @@
                                             <i class="fa fa-star-o"></i>
                                         </span>
                                             <span class="price">
-                                            <span class="new"><%= i.newprice %></span>
-                                            <span class="old"><%= i.oldprice %></span>
+                                            <span class="new"><%= i.newprice %></span>￥
+                                            <span class="old"><%= i.oldprice %></span>￥
                                             </span>
                                         </div>
                                         <!-- Content End  -->
@@ -955,11 +955,19 @@
     </footer>
     <!-- Footer Section End -->
 
-    
+    <script>
+        Array.from(document.getElementsByClassName('cart')).forEach(m => {
+            m.onclick = function(){
+                let id = this.getAttribute('data-id');
+                window.location.href = '/cart/'+id;
+            }
+        })
+    </script>
     <script src="javascripts/vendor.min.js"></script>
     <script src="javascripts/plugins.min.js"></script>
 
     <!--Main js-->
     <script src="javascripts/main.js"></script>
+    
 </body>
 </html>

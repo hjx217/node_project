@@ -8,7 +8,7 @@ let ejs = require('ejs');
 var indexRouter = require('./routes/action/index');
 // var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/action/login');
-var homRouter = require('./routes/action/hom');
+var myhomeRouter = require('./routes/action/myhome');
 // let home3Router = require('./routes/action/home3');
 let defRouter = require('./routes/action/def');
 let loginAdminRouter = require('./routes/action/loginAdmin');
@@ -25,7 +25,16 @@ let shopRouter = require('./routes/action/shop');
 let accountRouter = require('./routes/action/my-account');
 let cartRouter = require('./routes/action/cart');
 let checkoutRouter = require('./routes/action/checkout');
+let delRouter = require('./routes/action/del')
+let cartdelRouter = require('./routes/action/cartdel');
 let modificationRouter = require('./routes/action/modification');
+let searchRouter= require('./routes/action/search')
+// let modifiRouter = require('./routes/action/modifi')
+let addblogRouter = require('./routes/action/addblog');
+let delblogRouter = require('./routes/action/delblog');
+let searchblogRouter = require('./routes/action/searchblog');
+let animalsblogmanageRouter = require('./routes/action/animalsblogmanage');
+let modificationblogRouter = require('./routes/action/modificationblog');
 
 
 
@@ -47,7 +56,7 @@ app.use('/def',defRouter);
 app.use('/index', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/', loginRouter);
-app.use('/hom', homRouter);
+app.use('/myhome', myhomeRouter);
 // app.use('/home3', home3Router);
 // app.use('/single-post')
 app.use('/loginAdmin', loginAdminRouter);
@@ -64,7 +73,16 @@ app.use('/shop', shopRouter);
 app.use('/my-account', accountRouter);
 app.use('/cart', cartRouter);
 app.use('/checkout', checkoutRouter);
+app.use('/del', delRouter);
+app.use('/cartdel', cartdelRouter);
 app.use('/modification', modificationRouter);
+app.use('/search', searchRouter);
+app.use('/delblog', delblogRouter);
+app.use('/addblog',addblogRouter);
+app.use('/searchblog', searchblogRouter);
+app.use('/animalsblogmanage', animalsblogmanageRouter);
+app.use('/modificationblog', modificationblogRouter);
+// app.use('/modifi', modifiRouter);
 
 
 // catch 404 and forward to error handler

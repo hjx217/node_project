@@ -22,53 +22,52 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" action="/modification" method="POST">
-            <input type="hidden" name="id" value="<%= mo.id %>">
+        <form class="layui-form" action="/addblog" method="POST">
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                     <span class="x-red"></span>图片路径
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_repass" name="image" required lay-verify="required" value="<%= mo.image %>"
+                    <input type="text" id="L_repass" name="image" required lay-verify="required"
                     autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
-                    <span class="x-red"></span>折扣
+                    <span class="x-red"></span>日期
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_repass" name="discount" required lay-verify="required" value="<%= mo.discount %>"
+                    <input type="text" id="L_repass" name="blogTime" required lay-verify="required"
                     autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
-                    <span class="x-red"></span>商品名称
+                    <span class="x-red"></span>标题
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_repass" name="title" required lay-verify="required" value="<%= mo.title %>"
+                    <input type="text" id="L_repass" name="title" required lay-verify="required"
                     autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
-                    <span class="x-red"></span>新价格
+                    <span class="x-red"></span>简介
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_repass" name="newprice" required lay-verify="required" value="<%= mo.newprice %>"
+                    <input type="text" id="L_repass" name="ptext" required lay-verify="required"
                     autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item">
+            <!-- <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                     <span class="x-red"></span>旧价格
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_repass" name="oldprice" required lay-verify="required" value="<%= mo.oldprice %>"
+                    <input type="text" id="L_repass" name="oldprice" required lay-verify="required"
                     autocomplete="off" class="layui-input">
                 </div>
-            </div>
+            </div> -->
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                 </label>

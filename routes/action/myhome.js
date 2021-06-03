@@ -16,14 +16,10 @@ router.get('/', function(req, res, next){
   // console.log(111);
   connection.query("select * from tab_title", (error, results, fields) => {
     if(error) throw error;
-    res.render('hom', {data:results})
+    res.render('myhome', {data:results})
     return results;
   })
 });
-router.post('/', function(req, res,next) {
 
-    res.render('hom');
-    
-});
 
 module.exports = router;

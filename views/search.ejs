@@ -51,7 +51,7 @@
             <th>
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"></div>
             </th>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>图片</th>
             <th>折扣</th>
             <th>商品名称</th>
@@ -67,7 +67,7 @@
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'></div>
             </td>
-            <td><%= i.id %></td>
+            <!-- <td><%= i.id %></td> -->
             <td><%= i.image %></td>
             <td><%= i.discount %></td>
             <td><%= i.title %></td>
@@ -83,7 +83,7 @@
               <!-- <a title="编辑" class="layui-btn layui-btn-sm layui-btn-normal"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
                 编辑
               </a> -->
-              <a data-id="<%= i.id %>"  class="layui-btn layui-btn-sm layui-btn-warm modification"  title="修改">
+              <a data-id="<%= i.id %>" class="layui-btn layui-btn-sm layui-btn-warm modification"  title="修改" onclick="xg()">
                 修改
               </a>
               <a data-id="<%= i.id %>" title="删除" class="layui-btn layui-btn-sm layui-btn-danger del" >
@@ -149,8 +149,8 @@
       /*商品-删除*/
       Array.from(document.getElementsByClassName('del')).forEach(j => {
           j.onclick = function(){
-              let id = this.getAttribute('data-id');
-              window.location.href = '/del/' + id;
+              let ind = this.getAttribute('data-id');
+              window.location.href = '/del/'+id;
           }
       })
       /*商品-修改*/
@@ -158,10 +158,9 @@
         Array.from(document.getElementsByClassName('modification')).forEach(k => {
           k.onclick = function(){
               let id = this.getAttribute('data-id');
-              window.location.href = '/modification/' + id;
+              window.location.href = '/modification/'+id;
           }
       })
-      
       
       
       /*商品-查询*/

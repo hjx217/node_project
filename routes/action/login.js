@@ -5,7 +5,9 @@ var fs = require('fs');
 
 let connection = require('../until/connection');
 const Blog = require('../bean/blog');
-// let userLogin = require('../dao/sql')
+
+let Login = require('../dao/sql');
+
 
 var router = express.Router();
 
@@ -17,9 +19,8 @@ router.get('/login',function(req,res){
     res.render('login')
     //_dirname:当前文件的路径，path.join():合并路径
 })
-router.get('/home', (req, res) => {
-    res.render('home')
-})
+
+
 /**
 *登录验证功能
 */
@@ -32,7 +33,7 @@ router.post('/login',function(req,res){
         console.log("!!!",result)
         if(result.length==0){
             res.render('def')
-        }else{res.render('home')}
+        }else{res.redirect('myhome')}
     })
 
 });

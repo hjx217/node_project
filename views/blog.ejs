@@ -102,7 +102,7 @@
                             <div class="main-menu">
                                 <ul>
                                     <li class="has-children">
-                                        <a href="home">Home</a>
+                                        <a href="myhome">Home</a>
                                         <!-- <ul class="sub-menu">
                                             <li><a href="index">Home 1</a></li>
                                             <li><a href="index-2">Home 2</a></li>
@@ -349,277 +349,41 @@
     <div class="section section-margin">
         <div class="container">
             <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 m-b-n40">
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/1.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>27, Jan, 2021</span></li>
-                                </ul>
+                <tr>
+                    <% for(let i of blog) { %>                   
+                    <td>
+                        <div class="col m-b-40">
+                            <!-- Single Blog Start -->
+                            <div class="single-blog-wrapper">
+        
+                                <!-- Blog Thumb Start -->
+                                <div class="blog-thumb thumb-effect">
+                                    <a class="image" href="blog-details">
+                                        <img class="fit-image" src="<%= i.image %>" alt="Blog Image">
+                                    </a>
+                                </div>
+                                <!-- Blog Thumb End -->
+        
+                                <!-- Blog Content Start -->
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><span>By</span><a href="#/">Admin</a></li>
+                                            <li><span><%= i.blogTime %></span></li>
+                                        </ul>
+                                    </div>
+                                    <h2 class="blog-title"><a href="blog-details"><%= i.title %></a></h2>
+                                    <p><%= i.ptext %></p>
+                                    <a class="more-link" href="blog-details">Read More</a>
+                                </div>
+                                <!-- Blog Content End -->
+        
                             </div>
-                            <h2 class="blog-title"><a href="blog-details">How to take care of your fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
+                            <!-- Single Blog End -->
                         </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/2.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>12, Feb, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Find the male and female fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/3.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>20, March, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Tips for taking care of dogs</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/4.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>24, Jul, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Beginning a Birding Blog</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/5.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>02, Dec, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Start Fish Farming Blog</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/6.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>14, April, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Freshwater Aquarium Fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/7.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>21, Feb, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Cat Blogs That Help Cats</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/8.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>14, Feb, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">The legendary cat behavior</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details">
-                                <img class="fit-image" src="/images/blog/medium-size/9.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>20, March, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details">Tips for taking care of pets</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
+                    </td>
+                    <% } %>
+                </tr>
             </div>
             <div class="row">
                 <div class="col-12 m-t-50">
